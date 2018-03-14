@@ -1,0 +1,6 @@
+trigger CreateContactOnAccountTrigger on Account (after insert) {
+
+
+    NF_TriggerFactory.CreateHandlerAndExecute(Contact.sObjectType);
+
+}

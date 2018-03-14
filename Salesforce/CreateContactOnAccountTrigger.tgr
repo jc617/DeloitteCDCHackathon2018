@@ -1,6 +1,10 @@
-trigger CreateContactOnAccountTrigger on Account (after insert) {
-
-
-    NF_TriggerFactory.CreateHandlerAndExecute(Contact.sObjectType);
-
+trigger CreateContactOnAccountTrigger on Account (
+	before insert, 
+	before update, 
+	before delete, 
+	after insert, 
+	after update, 
+	after delete, 
+	after undelete) {
+	NF_TriggerFactory.CreateHandlerAndExecute(Contact.sObjectType);
 }
